@@ -20,6 +20,7 @@ export const Main = () => {
 
 const StyledMain = styled.section`
     background-color: #252527;
+    padding: 50px 0;
 `
 
 const Photo = styled.img`
