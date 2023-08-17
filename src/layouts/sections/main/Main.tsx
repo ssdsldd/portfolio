@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { StyledFlexWrapper } from "../../../components/FlexWrapper";
-import profilePhoto from '../../../assets/images/profile-photo.webp'
+import profilePhoto from '../../../assets/images/1.jpg'
 
 export const Main = () => {
     return (
@@ -24,6 +24,6 @@ const StyledMain = styled.section`
 
 const Photo = styled.img`
     object-fit: cover;
-    width: 350px;
-    height: 430px;
+    width: 250px;
+    height: 330px;
 `
