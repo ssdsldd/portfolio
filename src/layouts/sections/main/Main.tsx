@@ -26,5 +26,4 @@ const Photo = styled.img`
     object-fit: cover;
     width: 350px;
     height: 430px;
-
 `

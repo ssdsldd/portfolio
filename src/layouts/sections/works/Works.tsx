@@ -28,7 +28,6 @@ export const Works = () => {
 
 const StyledWorks = styled.section`
     background-color: #252527;
-    min-height: 100vh;
     a{
         color: #fff;
     }
