@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledFlexWrapper } from "../../../components/flexWrapper/FlexWrapper";
+import { StyledFlexWrapper } from "../../../components/FlexWrapper";
 import profilePhoto from '../../../assets/images/profile-photo.webp'
 
 export const Main = () => {
@@ -18,7 +18,7 @@ export const Main = () => {
     )
 }
 
-const StyledMain = styled.div`
+const StyledMain = styled.section`
     background-color: #252527;
 `
 
