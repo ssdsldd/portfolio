@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Menu } from "../../components/menu/Menu";
 import { Logo } from "../../components/logo/Logo";
 import { Container } from "../../components/Container";
 import { StyledFlexWrapper } from "../../components/FlexWrapper";
+import { HeaderMenu } from "../../components/menu/HeaderMenu";
+import { theme } from "../../styles/Theme";
 
 const menuItems = ['Home', 'Skills', 'Works', 'Testimony', 'Contact'];
 
@@ -13,7 +14,7 @@ export const Header = () => {
             <Container>
                 <StyledFlexWrapper align="center" justify="space-between">
                     <Logo/>
-                    <Menu items = {menuItems}/>
+                    <HeaderMenu items = {menuItems}/>
                 </StyledFlexWrapper>
             </Container>
         </StyledHeader>
@@ -21,8 +22,10 @@ export const Header = () => {
 }
 
 const StyledHeader = styled.header`
-    a{
-        color: #111;
-    }
-    
+    background-color: ${theme.color.secondaryBg};
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
 `
