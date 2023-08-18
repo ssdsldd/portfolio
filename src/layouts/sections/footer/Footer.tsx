@@ -40,7 +40,7 @@ export const Footer = () => {
 }
 
 const StyledFooter = styled.footer`
-    background-color: #252527;
+
 `
 
 const FooterName = styled.h4`
