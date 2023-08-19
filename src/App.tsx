@@ -7,7 +7,7 @@ import { Works } from './layouts/sections/works/Works';
 import { Testimony } from './layouts/sections/testimony/Testimony';
 import { Contact } from './layouts/sections/contact/Contact';
 import { Slogan } from './layouts/sections/slogan/Slogan';
-import { Footer } from './layouts/sections/footer/Footer';
+import { Footer } from './layouts/footer/Footer';
 
 
 function App() {

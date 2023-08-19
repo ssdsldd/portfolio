@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { MenuLink } from "../WorksLink";
+import { theme } from "../../../../styles/Theme";
+import { Button } from "../../../../components/Button";
 
 type WorkPropsType = {
     src: string
@@ -10,17 +13,22 @@ type WorkPropsType = {
 export const Work = (props: WorkPropsType) => {
     return (
         <StyledWork>
-            <WorkImage src={props.src}/>
-            <WorkTitle>{props.title}</WorkTitle>
-            <WorkText>{props.text}</WorkText>
-            <WorkLink>DEMO</WorkLink>
-            <WorkLink>CODE</WorkLink>
+            <ImageBox>
+                <WorkImage src={props.src}/>
+                <Button>view project</Button>
+            </ImageBox>
+            <WorkBox>
+                <WorkTitle>{props.title}</WorkTitle>
+                <WorkText>{props.text}</WorkText>
+                <MenuLink>DEMO</MenuLink>
+                <MenuLink>CODE</MenuLink>
+            </WorkBox>
         </StyledWork>
     )
 }
 
 const StyledWork = styled.div`
-    background-color: #1F1F20;
+    background-color: ${theme.color.secondaryBg};
     max-width: 540px;
     width: 100%;
     a{
@@ -35,13 +43,55 @@ const WorkImage = styled.img`
 `
 
 const WorkTitle = styled.h3`
-
+    text-transform: capitalize;
 `
 
 const WorkText = styled.p`
-    
+    margin: 15px 0 20px;
 `
 
-const WorkLink = styled.a`
-    
+const WorkBox = styled.div`
+    padding: 25px 20px;
+    ${MenuLink}{
+        padding: 9px 0;
+        cursor: pointer;
+        &:not(:last-child){
+            margin-right: 20px;
+        }
+    }
+`
+const ImageBox = styled.div`
+    position: relative;
+    &::before{
+        content: "";
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.30);
+        backdrop-filter: blur(4px);
+    }
+
+    &:hover{
+        &::before{
+            opacity: 1;
+        }
+        ${Button}{
+            opacity: 1;
+        }
+    }
+
+    ${Button}{
+        &::before{
+            width: 100%;
+            height: 100%;
+        }
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 0;
+    }
 `

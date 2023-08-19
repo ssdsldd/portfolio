@@ -28,4 +28,5 @@ const StyledHeader = styled.header`
     left: 0;
     right: 0;
     padding: 10px 0;
+    z-index: 9999;
 `
