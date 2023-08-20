@@ -4,12 +4,13 @@ import { StyledFlexWrapper } from "../../../components/FlexWrapper";
 import profilePhoto from '../../../assets/images/1.jpg'
 import { Container } from "../../../components/Container";
 import { theme } from "../../../styles/Theme";
+import { font } from "../../../styles/Common";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <StyledFlexWrapper justify="space-between" align="center">
+                <StyledFlexWrapper justify="space-around" align="center" wrap="wrap">
                     <div>
                         <SubTitle>Hi There</SubTitle>
                         <Name>I am <span>Kerimov Eldar</span></Name>
@@ -33,6 +34,10 @@ const Photo = styled.img`
     object-fit: cover;
     width: 350px;
     height: 430px;
+    @media ${theme.media.mobile}{
+        width: 310px;
+        height: 380px;
+    }
 `
 
 const SubTitle = styled.span`
@@ -42,14 +47,12 @@ const SubTitle = styled.span`
 `
 
 const Name = styled.h2`
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 50px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
+    ${font({family: "'Josefin Sans', sans-serif", weight: 700, Fmax: 50, Fmin: 36, letterSpacing: 2.5})}
     margin: 10px 0;
     span {
         position: relative;
         z-index: 0;
+        white-space: nowrap;
         &::before{
             content: '';
             position: absolute;
@@ -63,8 +66,7 @@ const Name = styled.h2`
 `
 
 const Title = styled.h1`
-    font-size: 27px;
-    font-weight: 400;
+    ${font({Fmax: 27, Fmin: 20})}
 `
 
 const PhotoBox = styled.div`
@@ -79,5 +81,11 @@ const PhotoBox = styled.div`
         height: 470px;
         position: absolute;
         border: 5px solid ${theme.color.accent};
+        @media ${theme.media.mobile}{
+            width: 314px;
+            height: 414px;
+            top: -20px;
+            right: -20px;
+        }
     }
 `

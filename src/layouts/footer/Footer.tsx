@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { StyledFlexWrapper } from "../../components/FlexWrapper";
 import { Icon } from "../../components/icon/Icon";
 import { theme } from "../../styles/Theme";
+import { font } from "../../styles/Common";
 
 export const Footer = () => {
     return (
@@ -46,11 +47,7 @@ const StyledFooter = styled.footer`
 `
 
 const FooterName = styled.h4`
-    color: #FFF;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 3px;
+    ${font({family: "'Josefin Sans', sans-serif", weight: 700, letterSpacing: 3, Fmax: 22, Fmin: 16})}
 `
 
 const SocialList = styled.ul`

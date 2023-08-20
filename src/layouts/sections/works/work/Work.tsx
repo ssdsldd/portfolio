@@ -29,10 +29,14 @@ export const Work = (props: WorkPropsType) => {
 
 const StyledWork = styled.div`
     background-color: ${theme.color.secondaryBg};
-    max-width: 540px;
-    width: 100%;
+    width: 330px;
+    flex-grow: 1;
     a{
         color: #fff;
+    }
+
+    @media ${theme.media.desktop} {
+        max-width: 540px;
     }
 `
 
@@ -93,5 +97,14 @@ const ImageBox = styled.div`
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
         opacity: 0;
+    }
+
+    @media ${theme.media.tablet}{
+        &::before{
+            opacity: 1;
+        }
+        ${Button}{
+            opacity: 1;
+        }
     }
 `

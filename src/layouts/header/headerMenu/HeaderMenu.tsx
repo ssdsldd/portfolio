@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/Theme";
+import { theme } from "../../../styles/Theme";
 
 export const HeaderMenu = (props: {items: Array<string>}) => {
     return (
@@ -34,6 +34,10 @@ const StyledNav = styled.nav`
         display: flex;
         gap: 30px;
         list-style: none;
+    }
+
+    @media ${theme.media.tablet}{
+        display: none;
     }
 `
 
