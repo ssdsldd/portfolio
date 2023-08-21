@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Menu = (props: {items: Array<string>}) => {
+export const Menu: React.FC<{items: Array<string>}> = (props: {items: Array<string>}) => {
     return (
         <StyledNav>
             <ul>

@@ -5,30 +5,53 @@ import { StyledFlexWrapper } from "../../../components/FlexWrapper";
 import { Skill } from "./skill/Skill";
 import { Container } from "../../../components/Container";
 
-export const Skills = () => {
+
+const skillItems = [
+       {
+              iconId: "html",
+              skillTitle: "HTML5",
+              skillText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+       },
+       {
+              iconId: "css",
+              skillTitle: "CSS3",
+              skillText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+       },
+       {
+              iconId: "react",
+              skillTitle: "REACT",
+              skillText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+       },
+       {
+              iconId: "ts",
+              skillTitle: "TYPESCRIPT",
+              skillText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+       },
+       {
+              iconId: "sc",
+              skillTitle: "STYLED COMPONENT",
+              skillText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+       },
+       {
+              iconId: "web",
+              skillTitle: "WEB DESIGN",
+              skillText: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"
+       },
+]
+
+export const Skills: React.FC = () => {
     return (
         <StyledSkills>
               <Container>
                      <StyledTitle>My Skills</StyledTitle>
                      <StyledFlexWrapper justify="space-between" wrap="wrap">
-                            <Skill iconId="html"
-                                   skillTitle="HTML5"
-                                   skillText="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"/>
-                            <Skill iconId="css"
-                                   skillTitle="CSS3"
-                                   skillText="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"/>
-                            <Skill iconId="react"
-                                   skillTitle="REACT"
-                                   skillText="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"/>
-                            <Skill iconId="ts"
-                                   skillTitle="TYPESCRIPT"
-                                   skillText="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"/>
-                            <Skill iconId="sc"
-                                   skillTitle="STYLED COMPONENTS"
-                                   skillText="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"/>
-                            <Skill iconId="web"
-                                   skillTitle="WEB DESIGN"
-                                   skillText="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim"/>
+                            {skillItems.map((skill, index) => {
+                                   return(
+                                          <Skill iconId={skill.iconId} key={index}
+                                          skillTitle={skill.skillTitle}
+                                          skillText={skill.skillText}/>
+                                   )
+                            })}
                      </StyledFlexWrapper>
               </Container>
         </StyledSkills>

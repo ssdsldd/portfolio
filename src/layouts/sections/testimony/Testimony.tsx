@@ -4,10 +4,10 @@ import { StyledTitle } from "../../../components/StyledTitle";
 import { Icon } from "../../../components/icon/Icon";
 import { StyledFlexWrapper } from "../../../components/FlexWrapper";
 import { Slider } from "../../../components/slider/Slider";
-import { IconBox } from "../skills/skill/Skill";
 import { Container } from "../../../components/Container";
+import { IconBox } from "../skills/Skills_Style";
 
-export const Testimony = () => {
+export const Testimony: React.FC = () => {
     return (
         <StyledTestimony>
             <Container>
