@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { Button } from "../../../../components/Button"
 import { theme } from "../../../../styles/Theme"
 import { StyledFlexWrapper } from "../../../../components/FlexWrapper"
-import { MenuLink } from "../WorksLink"
+import { WorksLink } from "../WorksLink"
 
 
 const StyledWorks = styled.section`
@@ -43,7 +43,7 @@ const WorkText = styled.p`
 
 const WorkBox = styled.div`
     padding: 25px 20px;
-    ${MenuLink}{
+    ${WorksLink}{
         padding: 9px 0;
         cursor: pointer;
         &:not(:last-child){
@@ -62,7 +62,8 @@ const ImageBox = styled.div`
         top: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.30);
-        backdrop-filter: blur(4px);
+        backdrop-filter: blur(2px);
+        transition: ${theme.animation.transition};
     }
 
     &:hover{
@@ -84,6 +85,7 @@ const ImageBox = styled.div`
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
         opacity: 0;
+        transition: ${theme.animation.transition};
     }
 
     @media ${theme.media.tablet}{

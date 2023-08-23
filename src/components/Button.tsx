@@ -23,6 +23,7 @@ export const Button = styled.button`
         left: 50%;
         transform: translateX(-50%);
         background-color: ${theme.color.accent};
+        transition: ${theme.animation.transition};
     }
 
     &:hover{

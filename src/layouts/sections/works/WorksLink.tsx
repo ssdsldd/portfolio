@@ -1,7 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { theme } from "../../../styles/Theme";
 
-export const MenuLink = styled.a`
+export const WorksLink = styled.a<{active?: boolean}>`
+    color: ${theme.color.font};
+    font-family: "Poppins";
+    cursor: pointer;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 1px;
@@ -18,6 +21,10 @@ export const MenuLink = styled.a`
         left: 50%;
         transform: translateX(-50%);
         background-color: ${theme.color.accent};
+        transition: ${theme.animation.transition};
+        ${props => props.active && css<{active?: boolean}>`
+            opacity: 1;
+        `}
     }
 
     &:hover{

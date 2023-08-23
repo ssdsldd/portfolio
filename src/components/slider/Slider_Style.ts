@@ -3,6 +3,7 @@ import { theme } from "../../styles/Theme"
 
 const StyledSlider = styled.div`
     max-width: 500px;
+    width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;

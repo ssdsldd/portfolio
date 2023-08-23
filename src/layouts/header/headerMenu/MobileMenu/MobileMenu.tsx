@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Menu } from "../menu/Menu";
 import {S} from "../HeaderMenu_Style";
 
-export const MobileMenu: React.FC<{items: Array<string>}> = (props: {items: Array<string>}) => {
+export const MobileMenu: React.FC = () => {
+
+    const [menuIsOpen, setmenuIsOpen] = useState(false);
+    const onButtonClick = () => {setmenuIsOpen(!menuIsOpen)}
+
     return (
             <S.MobileNav>
-                <S.MenuButton isOpen = {true}>
+                <S.MenuButton isOpen = {menuIsOpen} onClick={onButtonClick}>
                     <span></span>
                 </S.MenuButton>
-                <S.MenuWrapp isOpen = {true}>
-                    <Menu items={props.items} />
+                <S.MenuWrapp isOpen = {menuIsOpen}>
+                    <Menu/>
                 </S.MenuWrapp>
             </S.MobileNav>
     )

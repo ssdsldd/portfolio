@@ -1,5 +1,5 @@
 import React from "react";
-import { MenuLink } from "../WorksLink";
+import { WorksLink } from "../WorksLink";
 import { Button } from "../../../../components/Button";
 import { S } from "./Work_Style";
 
@@ -19,8 +19,8 @@ export const Work:React.FC<WorkPropsType> = (props: WorkPropsType) => {
             <S.WorkBox>
                 <S.WorkTitle>{props.title}</S.WorkTitle>
                 <S.WorkText>{props.text}</S.WorkText>
-                <MenuLink>DEMO</MenuLink>
-                <MenuLink>CODE</MenuLink>
+                <WorksLink>DEMO</WorksLink>
+                <WorksLink>CODE</WorksLink>
             </S.WorkBox>
         </S.StyledWork>
     )

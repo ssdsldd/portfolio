@@ -31,6 +31,7 @@ const SocialLink = styled.a`
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.10);  
     color: ${theme.color.accent};
+    transition: ${theme.animation.transition};
 
     &:hover{
         color: ${theme.color.primaryBg};

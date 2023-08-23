@@ -45,6 +45,9 @@ const Name = styled.h2`
 
 const Title = styled.h1`
     ${font({Fmax: 27, Fmin: 20})}
+    p{
+        display: none;
+    }
 `
 
 const PhotoBox = styled.div`

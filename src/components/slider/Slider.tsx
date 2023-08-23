@@ -1,20 +1,35 @@
 import React from "react";
 import { S } from "./Slider_Style";
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import '../../styles/slider.css'
 
-export const Slider: React.FC = () => {
-    return (
-        <S.StyledSlider>
-            <S.Slide>
-                <S.SlideText>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</S.SlideText>
-                <S.SlideName>@ivan ivanow</S.SlideName>
-            </S.Slide>
-            <S.Pagination>
-                <span className="active"></span>
-                <span></span>
-                <span></span>
-            </S.Pagination>
-        </S.StyledSlider>
+type SlidePropsType = {
+    text: string,
+    name: string
+}
+
+const Slide: React.FC<SlidePropsType> = (props: SlidePropsType) => {
+    return(
+        <S.Slide>
+            <S.SlideText>{props.text}</S.SlideText>
+            <S.SlideName>@{props.name}</S.SlideName>
+        </S.Slide>
+
     )
 }
+
+const items = [
+    <Slide text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."} name = {"ivan ivanow"}/>,
+    <Slide text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."} name = {"petr petrov"}/>,
+    <Slide text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."} name = {"egor egorov"}/>,
+];
+
+export const Slider: React.FC = () => (
+    <S.StyledSlider>
+        <AliceCarousel mouseTracking items={items}/>
+    </S.StyledSlider>
+);
+
 
 

@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components"
 import { theme } from "../../../styles/Theme"
+import { Link } from "react-scroll"
 
 // MENU
 const MenuList = styled.ul`
@@ -10,15 +11,6 @@ const MenuList = styled.ul`
         align-items: center;
         gap: 30px;
     }
-`
-
-const MenuLink = styled.a`
-    
-    text-align: center;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: transparent;
 `
 const Mask = styled.span`
     color: ${theme.color.accent};
@@ -39,6 +31,14 @@ const Mask = styled.span`
 
 const MenuItem = styled.li`
     position: relative;
+`
+
+const MenuLink = styled(Link)`
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: transparent;
 
     &:hover{
         ${Mask}{
@@ -63,8 +63,10 @@ const MenuItem = styled.li`
         right: -10px;
         background-color: ${theme.color.accent};
         transform: scale(0);
+        transition: ${theme.animation.transition};
     }
 `
+
 //Desktop
 const DesktopNav = styled.nav`
     ul{
@@ -85,7 +87,11 @@ const MenuWrapp = styled.div<{isOpen: boolean}>`
     right: 0;
     top: 0;
     bottom: 0;
-    display: none;
+    transform: translateY(-100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: ${theme.animation.transition};
     ul{
         display: flex;
         justify-content: center;
@@ -94,9 +100,7 @@ const MenuWrapp = styled.div<{isOpen: boolean}>`
     background: rgba(31, 31, 32, 0.90);
 
     ${props => props.isOpen && css<{isOpen: boolean}>`
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        transform: translateY(0);
     `}
 `
 

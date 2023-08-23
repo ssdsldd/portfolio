@@ -9,7 +9,7 @@ import { IconBox } from "../skills/Skills_Style";
 
 export const Testimony: React.FC = () => {
     return (
-        <StyledTestimony>
+        <StyledTestimony id="testimony">
             <Container>
                 <StyledFlexWrapper direction="column" align="center">
                     <StyledTitle>Testimony</StyledTitle>
